@@ -1,0 +1,211 @@
+-- -----------------------------------------------------
+-- Table Customers
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS Customers;
+CREATE TABLE Customers (
+  idCustomers INT NOT NULL PRIMARY KEY ,
+  Customers_Name VARCHAR(45) NOT NULL,
+  Customers_LastName VARCHAR(45) NOT NULL,
+  Customers_Phone INT(9) NOT NULL,
+  Birth_Date DATE NOT NULL,
+  Loyalty_Card INT
+ );
+
+Insert into Customers (idCustomers, Customers_Name, Customers_LastName, Customers_Phone, Birth_Date, Loyalty_Card) 
+				values
+(1,"Viktoria","Babala",970844185,'2004-07-11',15),
+(2,"Andrii","Berchak",992968745,'2004-04-13',15),
+(3,"Ann","Hus",931355478,'2004-08-07',15),
+(4,"Yazmine","Coleman",966804042,'2001-9-11',1),
+(5,"Lawson","Jackson",936861541,'1983-8-11',NULL),
+(6,"Athena","Rodriguez",950579334,'1999-12-4',1),
+(7,"Odessa","Barnes",639855981,'1989-10-25',5),
+(8,"Nathanael","Henderson",969337534,'1989-10-17',5),
+(9,"Bristol","Rogers",995738515,'1998-11-18',1),
+(10,"Umar","Alexander",966823772,'1971-6-21',NULL),
+(11,"Olida","Wright",635213019,'1979-9-9',NULL),
+(12,"Ulisses","Miller",938142037,'1976-2-27',NULL),
+(13,"Eleanor","Turner",959716578,'1976-9-9',1),
+(14,"Abigail","Green",963573929,'2000-2-16',5),
+(15,"Isabela","Anderson",662557607,'1976-3-12',10),
+(16,"Ike","Jenkins",935222406,'1992-8-15',5),
+(17,"Ulyses","Hill",968770971,'1990-4-14',NULL),
+(18,"Shepherd","Morgan",957519218,'1988-8-8',NULL),
+(19,"Sylvia","Cook",665630197,'2005-8-16',NULL),
+(20,"Yesenia","Smith",967877807,'1966-8-17',NULL),
+(21,"Vince","Flores",995507225,'1996-9-2',10),
+(22,"Xan","Murphy",997214282,'1964-8-23',NULL),
+(23,"Sebastian","Perry",669487116,'1972-2-8',NULL),
+(24,"Demi","Alexander",668555119,'1965-11-7',NULL),
+(25,"Isabelle","Nelson",633443386,'1989-11-3',NULL);
+
+
+
+
+-- -----------------------------------------------------
+-- Table Providers
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS Providers;
+CREATE TABLE Providers (
+  idProviders INT  NOT NULL PRIMARY KEY,
+  Provider_Name VARCHAR(45) NOT NULL,  
+  Provider_Phone INT(9) NOT NULL,
+  Provider_Location VARCHAR(45) NULL,
+  Timetable VARCHAR(45) NOT NULL
+   );
+Insert into Providers (idProviders, Provider_Name, Provider_Phone, Provider_Location, Timetable) values
+(1, "InterTool", 953483748, "м. Дніпро", "Четвер"),
+(2, "GSM-Service", 968162995, "м. Львів", "Понеділок"),
+(3, "СЕРВІС-МАРКЕТ", 638134930, "м. Івано-Франківськ", "Понеділок"),
+(4, "INDUSTRIAL", 668205860, "м. Запоріжжя", "П'ятниця"),
+(5, "АЛЗАП ПРО", 982813669, "м. Київ", "П'ятниця");
+
+
+
+-- -----------------------------------------------------
+-- Table Components
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS Components;
+CREATE TABLE IF NOT EXISTS Components (
+  idComponents INT  NOT NULL PRIMARY KEY,
+  Component_Type VARCHAR(45) NOT NULL,
+  Component_State VARCHAR(45)  NULL,
+  Component_Quantity INT NULL,
+  Component_Cost INT NOT NULL,
+  Country_Manufacture VARCHAR(45) NULL
+ );
+Insert into Components (idComponents, Component_Type, Component_State, Component_Quantity, Component_Cost, Country_Manufacture) values
+					   (1, "Display","New", 10, 1000, "USA"),
+					   (2, "ROM","New", 3, 4000, "Ukraine"),
+					   (3, "GPU","New", 1, 6500, "China"),
+					   (4, "Сorps","Used", 0, 57, "Japan"),
+					   (5, "Сorps","New", 0, 13, "USA"),
+					   (6, "Loop and cables","Used", 5, 50, "China"),
+					   (7, "Loop and cables","New", 11, 125, "USA"),
+					   (8, "GPU_Memory","New", 13, 170, "China"),
+					   (9, "Camera","Used", 25, 225, "China"),
+					   (10, "Keyboard","New", 7, 350, "Japan"),
+					   (11, "Motherboard","Used", 4, 2000, "China"),
+					   (12, "Bridge","Used", 1, 125, "USA"),
+					   (13, "GPU","Used", 1, 5300, "Japan"),
+					   (14, "Сorps","New", 4, 100, "Ukraine"),
+					   (15, "Button","New", 350, 17, "China"),
+					   (16, "Loop and cables","Used", 7, 57, "Japan"),
+					   (17, "TouchPad","New", 12, 1000, "China"),
+					   (18, "Display","Used", 15, 1260, "Ukraine"),
+					   (19, "ROM","New", 24, 500, "USA"),
+					   (20, "Thermal paste","New", 70, 84, "China"),
+					   (21, "Display","New", 12, 2350, "China"),
+					   (22, "Other","Used", 34, 458, "Japan"),
+					   (23, "Keyboard","New", 0, 99, "China"),
+					   (24, "RAM","New", 2, 945, "Ukraine"),
+					   (25, "Motherboard","Used", 0, 5780, "Japan"),
+					   (26, "Microphone","New", 3, 440, "China"),
+					   (27, "RAM","New", 3, 1200, "USA"),
+					   (28, "ROM","New", 7, 2000, "Japan"),
+					   (29, "Processor","Used", 9, 9010, "China"),
+					   (30, "Сorps","Used", 45, 142, "China"),
+					   (31, "Display","New", 1, 4700, "Japan"),
+					   (32, "Cooler","Used", 78, 5, "China"),
+					   (33, "Other","New", 96, 24, "Ukraine"),
+					   (34, "Keyboard","New", 15, 365, "USA"),
+					   (35, "Radiator","New", 14, 165, "China"),
+					   (36, "Other","Used", 7, 74, "USA"),
+					   (37, "Bridge","New", 8, 658, "China"),
+					   (38, "Speaker","New", 17, 98, "China"),
+					   (39, "Processor","New", 9, 3698, "Japan"),
+					   (40, "Processor","New", 2, 6890, "USA");
+
+
+
+
+
+-- -----------------------------------------------------
+-- Table Services_List
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS Services_List;
+CREATE TABLE IF NOT EXISTS Services_List (
+  idServices_List INT NOT NULL PRIMARY KEY,
+  Services_Type VARCHAR(45) NULL,
+  Services_Cost INT NULL 
+  );
+  Insert into Services_List (idServices_List, Services_Type, Services_Cost) values
+  							(1,"Diagnostic",300),
+							(2,"Replace CPU",3500),
+							(3,"Replace GPU",4500),
+							(4,"Replace RAM",1500),
+							(5,"Replace ROM",800),
+							(6,"Cleaning",1000),
+							(7,"Replace keyboard",500),
+							(8,"Replace cooler",500),
+							(9,"Replace radiator",500),
+							(10,"Replace CPU+GPU",7000),
+							(11,"Replace motherboard",2500),
+							(12,"Replace display",2000),
+							(13,"Replace corps",400),
+							(14,"Replace button",200),
+							(15,"Replace bridge",1500),
+							(16,"Replace GPU_memory",900),
+							(17,"Replace camera",500),
+							(18,"Replace connector",200),
+							(19,"Replace speaker",400),
+							(20,"Replace microphone",400);
+
+
+
+
+-- -----------------------------------------------------
+-- Table Orders
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS Orders;
+CREATE TABLE IF NOT EXISTS Orders (
+  idOrders INT NOT NULL PRIMARY KEY , 
+  Submission_Date DATE NOT NULL,
+  Execution_Date DATE NULL
+ );
+insert into Orders (idOrders,Submission_Date,Execution_Date) values
+				   (1,"2022-11-30","2022-12-04" ),
+				   (2,"2022-11-25","2022-12-15" ),
+				   (3,"2022-11-11","2022-12-01" ),
+				   (4,"2022-10-30","2022-11-11" ),
+				   (5,"2022-11-30","2022-12-10" ),
+				   (6,"2022-08-05","2022-09-07" ),
+				   (7,"2022-10-30","2022-12-02" ),
+				   (8,"2022-11-27","2022-12-07" ),
+				   (9,"2022-11-28","2022-11-30" ),
+				   (10,"2022-10-28","2022-11-01" ),
+				   (11,"2022-11-25","2022-12-04" ),
+				   (12,"2022-07-28","2022-08-01" ),
+				   (13,"2022-09-24","2022-11-03" ),
+				   (14,"2022-10-17","2022-10-17" ),
+				   (15,"2022-07-18","2022-07-19" ),
+				   (16,"2022-04-13","2022-05-12" ),
+				   (17,"2022-10-24","2022-12-04" ),
+				   (18,"2021-12-18","2022-01-12" ),
+				   (19,"2021-12-01","2022-02-14" ),
+				   (20,"2021-11-07","2021-12-04" );
+
+
+-- -----------------------------------------------------
+-- Table Employees
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS Employees;
+CREATE TABLE IF NOT EXISTS Employees (
+  idEmployees INT NOT NULL PRIMARY KEY,
+  Employee_Lastname VARCHAR(45) NOT NULL,
+  Employee_Name VARCHAR(45) NOT NULL,
+  Employee_Surname VARCHAR(45) NOT NULL,
+  Employee_Position VARCHAR(45) NULL,
+  Experience INT  NOT NULL
+   );
+insert into Employees (idEmployees,Employee_Lastname,Employee_Name,Employee_Surname,Employee_Position,Experience) values
+					  (1,"Бурій","Євгеній","Полянович","Engineer",3),
+					  (2,"Зіньківський","Олександр","Петрович","Manager",5),
+					  (3,"Стельмащук","Петро","Онуфрійович","Engineer",11),
+					  (4,"Колеснюк","Олександр","Йосипович","Trainee",0),
+					  (5,"Гринішак","Світлана","Орестівна","Manager",1),
+					  (6,"Бандера","Степан","Андрійович","Engineer",4),
+					  (7,"Сковорода","Григорій","Миколайович","Engineer",9),
+					  (8,"Соломко","Андрій","Васильович","Admin",13);
+
+
